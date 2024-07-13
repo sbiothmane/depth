@@ -33,3 +33,9 @@ docker run -it --rm -v $(pwd):/models gcr.io/cloud-devrel-public-resources/edget
 
 lsusb | grep -i google
 dmesg | grep -i apex
+
+
+sudo apt-get install libusb-1.0-0-dev
+sudo apt-get install libedgetpu1-std
+dmesg | grep -i apex
+lsusb
