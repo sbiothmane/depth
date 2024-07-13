@@ -13,9 +13,11 @@ libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl
 
 curl https://pyenv.run | bash
 
-wget https://dl.google.com/coral/edgetpu/compiler/edgetpu_compiler_latest.tar.gz
-tar xzf edgetpu_compiler_latest.tar.gz
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 
-sudo mv edgetpu_compiler /usr/local/bin/
+echo "deb https://packages.cloud.google.com/apt coral-edgetpu-stable main" | sudo tee /etc/apt/sources.list.d/coral-edgetpu.list
 
-edgetpu_compiler --version
+sudo apt-get update
+
+sudo apt-get install edgetpu-compiler
+
