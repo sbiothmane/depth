@@ -4,3 +4,18 @@ echo "deb https://packages.cloud.google.com/apt coral-edgetpu-stable main" | sud
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 sudo apt-get update
 sudo apt-get install libedgetpu1-std
+
+
+sudo apt-get install -y make build-essential libssl-dev zlib1g-dev \
+libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev \
+libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl
+
+
+curl https://pyenv.run | bash
+
+wget https://dl.google.com/coral/edgetpu/compiler/edgetpu_compiler_latest.tar.gz
+tar xzf edgetpu_compiler_latest.tar.gz
+
+sudo mv edgetpu_compiler /usr/local/bin/
+
+edgetpu_compiler --version
