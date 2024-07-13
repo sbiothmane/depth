@@ -30,3 +30,6 @@ docker pull gcr.io/cloud-devrel-public-resources/edgetpu-compilers
 
 
 docker run -it --rm -v $(pwd):/models gcr.io/cloud-devrel-public-resources/edgetpu-compilers edgetpu_compiler /1/1.tflite
+
+lsusb | grep -i google
+dmesg | grep -i apex
