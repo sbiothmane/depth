@@ -21,3 +21,12 @@ sudo apt-get update
 
 sudo apt-get install edgetpu-compiler
 
+sudo apt-get update
+sudo apt-get install -y docker.io
+sudo systemctl start docker
+sudo systemctl enable docker
+
+docker pull gcr.io/cloud-devrel-public-resources/edgetpu-compilers
+
+
+docker run -it --rm -v $(pwd):/models gcr.io/cloud-devrel-public-resources/edgetpu-compilers edgetpu_compiler /1/1.tflite
